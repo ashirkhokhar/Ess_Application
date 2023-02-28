@@ -20,3 +20,5 @@ samples, guidance on mobile development, and a full API reference.
 
 ![Capture1](https://user-images.githubusercontent.com/103077613/221820357-75f65656-5f2f-434d-810b-c526c2de0ac7.PNG)
 
+![Capture2](https://user-images.githubusercontent.com/103077613/221823293-7294421d-62c3-4109-a4d2-7b00b0dda6cf.PNG)
+
