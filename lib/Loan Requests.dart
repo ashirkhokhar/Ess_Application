@@ -106,7 +106,7 @@ class LoanRequests extends StatelessWidget {
                       children: const [
                         
                        Text('Amount',style: TextStyle(
-                              fontSize: 15,
+                              fontSize: 17,
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
                              ),),
