@@ -1,12 +1,13 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_5/Attendence.dart';
-import 'package:flutter_application_5/DashBoard.dart';
-import 'package:flutter_application_5/LeaveRequest.dart';
-import 'package:flutter_application_5/Leave_requests.dart';
-import 'package:flutter_application_5/Loan%20Requests.dart';
-import 'package:flutter_application_5/SalarySlips.dart';
-import 'ProfileScreen.dart';
+import 'package:flutter_application_5/Attendence/Attendence.dart';
+import 'package:flutter_application_5/DashBoard/DashBoard.dart';
+import 'package:flutter_application_5/LeaveRequest/LeaveRequest.dart';
+import 'package:flutter_application_5/LeaveRequests/Leave_requests.dart';
+import 'package:flutter_application_5/LoanRequests.dart/Loan%20Requests.dart';
+import 'package:flutter_application_5/ProfileScreen/ProfileScreen.dart';
+import 'package:flutter_application_5/SalarySlips/SalarySlips.dart';
+
 class Navigation extends StatefulWidget {
   const Navigation({super.key});
   

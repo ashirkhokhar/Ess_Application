@@ -13,7 +13,6 @@ class SalarySlips extends StatelessWidget {
         automaticallyImplyLeading: false,
         centerTitle: true,
         actions: <Widget>[
-    
           IconButton( icon :const Icon(Icons.notifications),
           onPressed:(){}
           ),

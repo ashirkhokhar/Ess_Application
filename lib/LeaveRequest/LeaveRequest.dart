@@ -2,6 +2,7 @@
 
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 class LeaveRequest extends StatefulWidget {
   const LeaveRequest({super.key});
@@ -11,45 +12,20 @@ class LeaveRequest extends StatefulWidget {
 }
 
 class _LeaveRequestState extends State<LeaveRequest> {
-  final List<String> items = [
-    '24 Jan,2023',
-    '25 Jan,2023',
-    '26 Jan,2023',
-    '27 Jan,2023',
-    '28 Jan,2023',
-    '29 Jan,2023',
-    '30 Jan,2023',
-    '01 FEB,2023',
-    '02 Feb,2023',
-  ];
-   final List<String> items01 = [
-    '24 Feb,2023',
-    '25 Feb,2023',
-    '26 Feb,2023',
-    '27 Feb,2023',
-    '28 Feb,2023',
-    '29 Feb,2023',
-    '30 Feb,2023',
-    '01 Feb,2023',
-    '02 Feb,2023',
-  ];
 
-     final List<String> items02 = [
-    'Medical leaves',
-    'Casual leaves',
-    'Haif leaves',
-  ];
+   String _selectedItem = '24 Jan,2023';
+   String _selectedItem01 = '25 Feb,2023';
+   String _selectedItem02 = 'Medical leaves';
+   String _selectedItem03 = 'Full- Day';
 
-   final List<String> items03 = [
-    'Full- Day',
-    'Haif- Day',
-    
-  ];
 
-  String? selectedValue;
-  String? selectedValue01;
-  String? selectedValue02;
-   String? selectedValue03;
+   List<String> _dropdownItems = ['24 Jan,2023','25 Jan,2023','26 Jan,2023','27 Jan,2023','28 Jan,2023','29 Jan,2023','30 Jan,2023','01 FEB,2023','02 Feb,2023',];
+   List<String> _dropdownItems01 = ['25 Feb,2023','26 Feb,2023','27 Feb,2023','28 Feb,2023','29 Feb,2023','30 Feb,2023','01 Feb,2023','02 Feb,2023',];
+   List<String> _dropdownItems02 = ['Medical leaves','Casual leaves','Half leaves',];
+   List<String> _dropdownItems03 = ['Full- Day','Half- Day',];
+
+
+ 
   final reasoncontroller=TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -100,87 +76,35 @@ class _LeaveRequestState extends State<LeaveRequest> {
                 Row(
                   mainAxisAlignment:MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text("Start Date ",style: TextStyle(
-          fontSize: 15, 
-          color: Colors.black,
+                    Text(
+                    "Start Date ",
+                    style: TextStyle(
+                    fontSize: 15, 
+                    color: Colors.black,
           )
           ),
-          DropdownButton2(
-          isExpanded: true,
-          hint: Row(
-          children:  const [
-          Icon(
-          Icons.list,
-          size: 12,
-            color: Colors.black,
-                            ),
-                            SizedBox(width: 4,),
-                            Expanded(
-                              child: Text(
-                                'Select ',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
-                        ),
-                        items: items
-                            .map((item) => DropdownMenuItem<String>(
-                                  value: item,
-                                  child: Text(
-                                    item,
-                                    style:  TextStyle(fontSize: 12,color:Colors.black),
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ))
+          DropdownButton<String>(
+            
+        icon: Icon(
+        Icons.calendar_month_sharp,size: 18,),
+      value: _selectedItem,
+      items: _dropdownItems.map((String item) {
+        return DropdownMenuItem<String>(
+          value: item,
+          child: Text(item),
+          
+        );
+      }).toList(),
       
-                            .toList(),
-                        value: selectedValue,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedValue = value as String;
-                          });
-                        },
-                        icon: const Icon(
-                          Icons.calendar_month_rounded,
-                          color: Colors.grey,
-                        ),
-                        iconSize: 15,
-                        iconEnabledColor: Colors.black,
-                        iconDisabledColor: Colors.grey,
-                        buttonHeight: 30,
-                        buttonWidth: 100,
-                        buttonPadding: const EdgeInsets.only(left: 14, right: 14),
-                        buttonDecoration: BoxDecoration(
-                          //borderRadius: BorderRadius.circular(14),
-      
-                          border: Border.all(
-                            color: Colors.white,
-                          ),
-                          color: Colors.white,
-                        ),
-      
-                        buttonElevation: 2,
-                        itemHeight: 40,
-                        itemPadding: const EdgeInsets.only(left: 14, right: 14),
-                        dropdownMaxHeight: 120,
-                        dropdownWidth: 100,
-                        dropdownPadding: null,
-                        dropdownDecoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),
-                          color: Colors.white,
-                        ),
-                        dropdownElevation: 8,
-                        scrollbarRadius: const Radius.circular(40),
-                        scrollbarThickness: 6,
-                        scrollbarAlwaysShow: true,
-                        offset: const Offset(-20, 0),
-                      ),
-      
+      style: const TextStyle(fontSize: 12,color: Colors.black),
+      onChanged: (String? selectedItem) {
+        setState(() {
+          _selectedItem = selectedItem!;
+        },
+        );
+      },
+          )
+
       
                   ],
                 )
@@ -194,192 +118,100 @@ class _LeaveRequestState extends State<LeaveRequest> {
                 Row(
                   mainAxisAlignment:MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text("End Date ",style: TextStyle(
-          fontSize: 15, 
-          color: Colors.black,
-          )),
-          DropdownButton2(
-          isExpanded: true,
-          hint: Row(
-          children:  const [
-          Icon(
-          Icons.list,
-          size: 12,
-            color: Colors.black,
-                            ),
-                            SizedBox(width: 4,),
-                            Expanded(
-                              child: Text(
-                                'Select ',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
-                        ),
-                        items: items01
-                            .map((item01) => DropdownMenuItem<String>(
-                                  value: item01,
-                                  child: Text(
-                                    item01,
-                                    style:  TextStyle(fontSize: 12,color:Colors.black),
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ))
-      
-                            .toList(),
-                        value: selectedValue01,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedValue01 = value as String;
-                          });
-                        },
-                        icon: const Icon(
-                          Icons.calendar_month_rounded,
-                          color: Colors.grey,
-                        ),
-                        iconSize: 15,
-                        iconEnabledColor: Colors.black,
-                        iconDisabledColor: Colors.grey,
-                        buttonHeight: 30,
-                        buttonWidth: 100,
-                        buttonPadding: const EdgeInsets.only(left: 14, right: 14),
-                        buttonDecoration: BoxDecoration(
-                          //borderRadius: BorderRadius.circular(14),
-      
-                          border: Border.all(
-                            color: Colors.white,
-                          ),
-                          color: Colors.white,
-                        ),
-      
-                        buttonElevation: 2,
-                        itemHeight: 40,
-                        itemPadding: const EdgeInsets.only(left: 14, right: 14),
-                        dropdownMaxHeight: 120,
-                        dropdownWidth: 100,
-                        dropdownPadding: null,
-                        dropdownDecoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),
-                          color: Colors.white,
-                        ),
-                        dropdownElevation: 8,
-                        scrollbarRadius: const Radius.circular(40),
-                        scrollbarThickness: 6,
-                        scrollbarAlwaysShow: true,
-                        offset: const Offset(-20, 0),
-                      ),
+                    Text("End Date ",
+                    style: TextStyle(
+                    fontSize: 15, 
+                    color: Colors.black,
+          )
+          ),
+          DropdownButton<String>(
+             icon: Icon(
+        Icons.calendar_month_sharp,size: 18,),
+      value: _selectedItem01,
+      items: _dropdownItems01.map((String item) {
+        return DropdownMenuItem<String>(
+          value: item,
+          child: Text(item),
+          
+        );
+      }).toList(),
+      style: const TextStyle(
+        fontSize: 12,
+        color: Colors.black),
+      onChanged: (String? selectedItem01) {
+        
+  
+  
+        setState(() {
+          _selectedItem01 = selectedItem01!;
+        },
+        
+        
+        
+        );
+        
+        
+        
+        
+      },
+          )
+        
       
       
                   ],
                 )
               ],
             ),
-            Divider(color: Colors.blue[700],indent: 50,endIndent: 50,),
-            const SizedBox(height: 2,),
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            Divider(
+              color: Colors.blue[700],
+              indent: 50,endIndent: 50,),
+              const SizedBox(height: 2,),
             
             Column(
               children: [
                 Row(
                   mainAxisAlignment:MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text("Leave Type ",style: TextStyle(
-          fontSize: 15,
-           color: Colors.black,
+                    Text(
+                      "Leave Type ",
+                       style: TextStyle(
+                       fontSize: 15,
+                       color: Colors.black,
            
           )
           ),
-          DropdownButton2(
-          isExpanded: true,
-          hint: Row(
-          children:  const [
-          Icon(
-          Icons.list,
-          size: 12,
-            color: Colors.black,
-                            ),
-                            SizedBox(width: 4,),
-                            Expanded(
-                              child: Text(
-                                'Select ',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
-                        ),
-                        items: items02
-                            .map((item02) => DropdownMenuItem<String>(
-                                  value: item02,
-                                  child: Text(
-                                    item02,
-                                    style:  TextStyle(fontSize: 12,color:Colors.black),
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ))
-      
-                            .toList(),
-                        value: selectedValue02,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedValue02 = value as String;
-                          });
-                        },
-                        icon: const Icon(
-                          Icons.keyboard_arrow_down
-                        ),
-                        iconSize: 15,
-                        iconEnabledColor: Colors.black,
-                        iconDisabledColor: Colors.grey,
-                        buttonHeight: 30,
-                        buttonWidth: 105,
-                        buttonPadding: const EdgeInsets.only(left: 14, right: 14),
-                        buttonDecoration: BoxDecoration(
-                          //borderRadius: BorderRadius.circular(14),
-      
-                          border: Border.all(
-                            color: Colors.white,
-                          ),
-                          color: Colors.white,
-                        ),
-      
-                        buttonElevation: 2,
-                        itemHeight: 40,
-                        itemPadding: const EdgeInsets.only(left: 14, right: 14),
-                        dropdownMaxHeight: 120,
-                        dropdownWidth: 100,
-                        dropdownPadding: null,
-                        dropdownDecoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),
-                          color: Colors.white,
-                        ),
-                        dropdownElevation: 8,
-                        scrollbarRadius: const Radius.circular(40),
-                        scrollbarThickness: 6,
-                        scrollbarAlwaysShow: true,
-                        offset: const Offset(-20, 0),
-                      ),
+          Padding(
+            padding: const EdgeInsets.only(right:8.0),
+            child:DropdownButton<String>(
+      value: _selectedItem02,
+      items: _dropdownItems02.map((String item) {
+        return DropdownMenuItem<String>(
+          value: item,
+          child: Text(item),
+          
+        );
+      }).toList(),
+      style: const TextStyle(
+        fontSize: 12,
+        color: Colors.black),
+        onChanged: (String? selectedItem02) {
+        
+  
+  
+        setState(() {
+          _selectedItem02 = selectedItem02!;
+        },
+        
+        
+        
+        );
+        
+        
+        
+        
+      },
+    )
+          ),
       
       
                   ],
@@ -397,81 +229,33 @@ class _LeaveRequestState extends State<LeaveRequest> {
           fontSize: 15,
            color: Colors.black,
            )),
-          DropdownButton2(
-          isExpanded: true,
-          hint: Row(
-          children:  const [
-          Icon(
-          Icons.list,
-          size: 12,
-            color: Colors.black,
-                            ),
-                            SizedBox(width: 4,),
-                            Expanded(
-                              child: Text(
-                                'Select ',
-                                style: TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black,
-                                ),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
-                        ),
-                        items: items03
-                            .map((item03) => DropdownMenuItem<String>(
-                                  value: item03,
-                                  child: Text(
-                                    item03,
-                                    style:  TextStyle(fontSize: 12,color:Colors.black),
-                                    overflow: TextOverflow.ellipsis,
-                                  ),
-                                ))
-      
-                            .toList(),
-                        value: selectedValue03,
-                        onChanged: (value) {
-                          setState(() {
-                            selectedValue03 = value as String;
-                          });
-                        },
-                        icon: const Icon(
-                          Icons.keyboard_arrow_down
-                        ),
-                        iconSize: 15,
-                        iconEnabledColor: Colors.black,
-                        iconDisabledColor: Colors.grey,
-                        buttonHeight: 30,
-                        buttonWidth: 100,
-                        buttonPadding: const EdgeInsets.only(left: 14, right: 14),
-                        buttonDecoration: BoxDecoration(
-                          //borderRadius: BorderRadius.circular(14),
-      
-                          border: Border.all(
-                            color: Colors.white,
-                          ),
-                          color: Colors.white,
-                        ),
-      
-                        buttonElevation: 2,
-                        itemHeight: 40,
-                        itemPadding: const EdgeInsets.only(left: 14, right: 14),
-                        dropdownMaxHeight: 120,
-                        dropdownWidth: 100,
-                        dropdownPadding: null,
-                        dropdownDecoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(14),
-                          color: Colors.white,
-                        ),
-                        dropdownElevation: 8,
-                        scrollbarRadius: const Radius.circular(40),
-                        scrollbarThickness: 6,
-                        scrollbarAlwaysShow: true,
-                        offset: const Offset(-20, 0),
-                      ),
-      
+          DropdownButton<String>(
+              value: _selectedItem03,
+              items: _dropdownItems03.map((String item) {
+                return DropdownMenuItem<String>(
+          value: item,
+          child: Text(item),
+          
+                );
+              }).toList(),
+              style: const TextStyle(fontSize: 12,color: Colors.black),
+              onChanged: (String? selectedItem03) {
+                
+          
+          
+                setState(() {
+          _selectedItem03 = selectedItem03!;
+                },
+                
+                
+                
+                );
+                
+                
+                
+                
+              },
+            )
       
                   ],
                 ),
@@ -723,7 +507,8 @@ class _LeaveRequestState extends State<LeaveRequest> {
                                                ),
                                               ],
                                              
-                                             ));
+                                             )
+                                             );
                                  
                                }),
                              ),

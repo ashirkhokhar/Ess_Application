@@ -1,7 +1,7 @@
 
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_5/DashBoard.dart';
+import 'package:flutter_application_5/DashBoard/DashBoard.dart';
 import 'package:google_fonts/google_fonts.dart';
 class CreateLoanRequest extends StatefulWidget {
    CreateLoanRequest({super.key});
@@ -77,7 +77,7 @@ final remarkscontroller=TextEditingController();
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('Create New Loan Request',style: TextStyle(
+                const Text('Create New Loan Request',style: TextStyle(
                             fontSize: 25,
                             color: Colors.black
                            ),),
@@ -93,7 +93,7 @@ final remarkscontroller=TextEditingController();
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                Text('Loan Type',style: TextStyle(
+                const Text('Loan Type',style: TextStyle(
                               fontSize: 15,
                               color: Colors.black
                              ),
@@ -188,7 +188,7 @@ final remarkscontroller=TextEditingController();
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(' Installment start',style: TextStyle(
+                  const Text(' Installment start',style: TextStyle(
                               fontSize: 15,
                               color: Colors.black
                              ),
@@ -257,7 +257,7 @@ final remarkscontroller=TextEditingController();
                           dropdownMaxHeight: 100,
                           dropdownWidth: 120,
                           dropdownPadding: null,
-                          dropdownDecoration: BoxDecoration(
+                          dropdownDecoration: const BoxDecoration(
                             //borderRadius: BorderRadius.circular(14),
                             color: Colors.white,
                           ),
@@ -278,7 +278,7 @@ final remarkscontroller=TextEditingController();
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(' Installment end',style: TextStyle(
+                  const Text(' Installment end',style: TextStyle(
                               fontSize: 15,
                               color: Colors.black
                              ),
@@ -362,14 +362,14 @@ final remarkscontroller=TextEditingController();
                 ],
               ),
             ),
-            SizedBox(height: 20,),
+            const SizedBox(height: 20,),
             Column(
              
               children: [
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
-                    padding: const EdgeInsets.only(right:20.0,left:32,top: 30),
+                    padding: EdgeInsets.only(right:20.0,left:32,top: 30),
                     child: Text(' Loan amount',style: TextStyle(
                                 fontSize: 15,
                                 color: Colors.black
@@ -378,7 +378,7 @@ final remarkscontroller=TextEditingController();
                                ),
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                                children: [
@@ -402,14 +402,14 @@ final remarkscontroller=TextEditingController();
                                  ),
                                ],
                              ),
-                             SizedBox(height: 20,),
+                             const SizedBox(height: 20,),
             Column(
              
               children: [
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
-                    padding: const   EdgeInsets.only(right:20.0,left:32,),
+                    padding: EdgeInsets.only(right:20.0,left:32,),
                   
                     child: Text(' no.of installments',style: TextStyle(
                                 fontSize: 15,
@@ -419,7 +419,7 @@ final remarkscontroller=TextEditingController();
                                ),
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                                children: [
@@ -443,14 +443,14 @@ final remarkscontroller=TextEditingController();
                                  ),
                                ],
                              ),
-                             SizedBox(height: 20,),
+                             const SizedBox(height: 20,),
             Column(
              
               children: [
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
-                    padding: const   EdgeInsets.only(right:20.0,left:32,),
+                    padding: EdgeInsets.only(right:20.0,left:32,),
                     
                     child: Text(' Installment amount',style: TextStyle(
                                 fontSize: 15,
@@ -460,7 +460,7 @@ final remarkscontroller=TextEditingController();
                                ),
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                                children: [
@@ -484,14 +484,14 @@ final remarkscontroller=TextEditingController();
                                  ),
                                ],
                              ),
-                             SizedBox(height: 20,),
+                             const SizedBox(height: 20,),
             Column(
              
               children: [
-                Align(
+                const Align(
                   alignment: Alignment.topLeft,
                   child: Padding(
-                    padding:  const   EdgeInsets.only(right:20.0,left:32,),
+                    padding:  EdgeInsets.only(right:20.0,left:32,),
                     child: Text(' Remarks',style: TextStyle(
                                 fontSize: 15,
                                 color: Colors.black
@@ -500,7 +500,7 @@ final remarkscontroller=TextEditingController();
                                ),
                   ),
                 ),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Column(
                               mainAxisAlignment: MainAxisAlignment.start,
                                children: [
@@ -527,7 +527,7 @@ final remarkscontroller=TextEditingController();
                                  ),
                                ],
                              ),
-                             SizedBox(height: 30),
+                             const SizedBox(height: 30),
                              Column(
              
               children: [
@@ -562,7 +562,7 @@ final remarkscontroller=TextEditingController();
                     ),
                   ),
                 ),
-                SizedBox(height: 30,),
+                const SizedBox(height: 30,),
       
       
       

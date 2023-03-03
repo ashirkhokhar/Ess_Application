@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_5/SplashScreen.dart';
+
+
+import 'Login/Login/SplashScreen.dart';
 
 
 void main() {

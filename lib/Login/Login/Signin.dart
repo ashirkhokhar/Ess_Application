@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_5/curvednavbar.dart';
+import 'package:flutter_application_5/NavBar/curvednavbar.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+
+
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
@@ -110,7 +113,7 @@ bool _passwordVisible = false;
                            controller: usernamecontroller,
                           obscureText: false,
                           decoration: InputDecoration(
-                             focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+                             focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                             hintText: "Username",
                             hintStyle: Theme.of(context).textTheme.caption!.copyWith(
    fontSize: 15,
@@ -132,7 +135,7 @@ bool _passwordVisible = false;
                           controller: _userPasswordController,
                           obscureText: !_passwordVisible,
                            decoration: InputDecoration(
-                            focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+                            focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
                 
                             hintText: "Password",
                             hintStyle: Theme.of(context).textTheme.caption!.copyWith(
@@ -178,7 +181,7 @@ bool _passwordVisible = false;
                          )
                         ],
                         ),
-                        SizedBox(height: 35,),
+                        const SizedBox(height: 35,),
                      SizedBox(
                       width:260,
                       height:50,
@@ -187,7 +190,7 @@ bool _passwordVisible = false;
                            debugPrint('ElevatedButton Clicked');
                             Navigator.push(
                          context,
-                          MaterialPageRoute(builder: (context) =>  Navigation()));
+                          MaterialPageRoute(builder: (context) =>  const Navigation()));
                           if(isLoggedIn){
                             
                           }

@@ -51,6 +51,7 @@ class _AttendenceState extends State<Attendence> {
 backgroundColor: Colors.white,
 body:Column(
   children: [
+    SizedBox(height:10),
         Row(
       children: [
         Padding(
@@ -133,6 +134,7 @@ body:Column(
         const SizedBox(height: 10,),
         ],
     ),
+    SizedBox(height: 30,),
     Container(
               padding: const EdgeInsets.all(15),
               child:Table(
